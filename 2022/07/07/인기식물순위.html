@@ -1,0 +1,4285 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Title | statistics</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://suuiq.github.io/blue/2022/07/07/%EC%9D%B8%EA%B8%B0%EC%8B%9D%EB%AC%BC%EC%88%9C%EC%9C%84.html" />
+<meta property="og:url" content="https://suuiq.github.io/blue/2022/07/07/%EC%9D%B8%EA%B8%B0%EC%8B%9D%EB%AC%BC%EC%88%9C%EC%9C%84.html" />
+<meta property="og:site_name" content="statistics" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-07T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Title" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-07T00:00:00-05:00","datePublished":"2022-07-07T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Title","mainEntityOfPage":{"@type":"WebPage","@id":"https://suuiq.github.io/blue/2022/07/07/%EC%9D%B8%EA%B8%B0%EC%8B%9D%EB%AC%BC%EC%88%9C%EC%9C%84.html"},"url":"https://suuiq.github.io/blue/2022/07/07/%EC%9D%B8%EA%B8%B0%EC%8B%9D%EB%AC%BC%EC%88%9C%EC%9C%84.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blue/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://suuiq.github.io/blue/feed.xml" title="statistics" /><link rel="shortcut icon" type="image/x-icon" href="/blue/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blue/">statistics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blue/about/">About Me</a><a class="page-link" href="/blue/search/">Search</a><a class="page-link" href="/blue/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-07T00:00:00-05:00" itemprop="datePublished">
+        Jul 7, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      11 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/suuiq/blue/tree/master/_notebooks/인기식물순위.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/blue/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/suuiq/blue/master?filepath=_notebooks%2F%EC%9D%B8%EA%B8%B0%EC%8B%9D%EB%AC%BC%EC%88%9C%EC%9C%84.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blue/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/suuiq/blue/blob/master/_notebooks/인기식물순위.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/blue/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fsuuiq%2Fblue%2Fblob%2Fmaster%2F_notebooks%2F%EC%9D%B8%EA%B8%B0%EC%8B%9D%EB%AC%BC%EC%88%9C%EC%9C%84.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/blue/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/인기식물순위.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#54032;&#47588;&#52376;:-&#46300;&#49472;&#54540;&#46972;&#50892;,-&#45453;&#50896;&#52397;&#45380;,-&#44208;&#54540;&#47004;&#53944;,-&#54540;&#47196;&#46980;&#45936;&#53076;,-&#54392;&#47476;&#48120;&#44032;&#46304;">&#54032;&#47588;&#52376;: &#46300;&#49472;&#54540;&#46972;&#50892;, &#45453;&#50896;&#52397;&#45380;, &#44208;&#54540;&#47004;&#53944;, &#54540;&#47196;&#46980;&#45936;&#53076;, &#54392;&#47476;&#48120;&#44032;&#46304;<a class="anchor-link" href="#&#54032;&#47588;&#52376;:-&#46300;&#49472;&#54540;&#46972;&#50892;,-&#45453;&#50896;&#52397;&#45380;,-&#44208;&#54540;&#47004;&#53944;,-&#54540;&#47196;&#46980;&#45936;&#53076;,-&#54392;&#47476;&#48120;&#44032;&#46304;"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50900;&#44036;-&#48288;&#49828;&#53944;-1&#49692;&#50948;-&#45936;&#51060;&#53552;-&#49688;&#51665;">&#50900;&#44036; &#48288;&#49828;&#53944; 1&#49692;&#50948; &#45936;&#51060;&#53552; &#49688;&#51665;<a class="anchor-link" href="#&#50900;&#44036;-&#48288;&#49828;&#53944;-1&#49692;&#50948;-&#45936;&#51060;&#53552;-&#49688;&#51665;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">드셀1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;금전수&#39;</span><span class="p">,</span> <span class="s1">&#39;스투키&#39;</span><span class="p">,</span> <span class="s1">&#39;산세베리아&#39;</span><span class="p">,</span> <span class="s1">&#39;율마&#39;</span><span class="p">,</span> <span class="s1">&#39;스파트필름&#39;</span><span class="p">,</span> <span class="s1">&#39;파키라&#39;</span><span class="p">,</span> <span class="s1">&#39;몬스테라&#39;</span><span class="p">,</span> <span class="s1">&#39;뱅갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;사파이어&#39;</span><span class="p">,</span> <span class="s1">&#39;안시리움&#39;</span><span class="p">,</span> <span class="s1">&#39;테이블야자&#39;</span><span class="p">,</span> <span class="s1">&#39;녹보수&#39;</span><span class="p">,</span> <span class="s1">&#39;유칼리툽스&#39;</span><span class="p">,</span> <span class="s1">&#39;극락조&#39;</span><span class="p">,</span> <span class="s1">&#39;올리브나무&#39;</span><span class="p">,</span> <span class="s1">&#39;스킨답서스&#39;</span><span class="p">,</span> <span class="s1">&#39;산호수&#39;</span><span class="p">,</span> <span class="s1">&#39;보석금전수&#39;</span><span class="p">,</span> <span class="s1">&#39;오렌지자스민&#39;</span><span class="p">,</span> <span class="s1">&#39;크루시아&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;인도고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;크로톤&#39;</span><span class="p">,</span> <span class="s1">&#39;마리안느&#39;</span><span class="p">,</span> <span class="s1">&#39;콤펙타&#39;</span><span class="p">,</span> <span class="s1">&#39;아레카야자&#39;</span><span class="p">,</span> <span class="s1">&#39;행운목&#39;</span><span class="p">,</span> <span class="s1">&#39;홍콩야자&#39;</span><span class="p">,</span> <span class="s1">&#39;알로카시아&#39;</span><span class="p">,</span> <span class="s1">&#39;만세선인장&#39;</span><span class="p">,</span> <span class="s1">&#39;핫도그율마&#39;</span><span class="p">,</span> <span class="s1">&#39;해피트리&#39;</span><span class="p">,</span> <span class="s1">&#39;떡갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;드라코&#39;</span><span class="p">,</span> <span class="s1">&#39;관음죽&#39;</span><span class="p">]})</span>
+<span class="n">드셀1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>파키라</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>몬스테라</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>뱅갈고무나무</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>사파이어</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>안시리움</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>테이블야자</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>녹보수</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>유칼리툽스</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>극락조</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>올리브나무</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>스킨답서스</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>산호수</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>보석금전수</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>오렌지자스민</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>크루시아</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>인도고무나무</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>크로톤</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>마리안느</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>콤펙타</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>아레카야자</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>홍콩야자</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>알로카시아</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>만세선인장</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>핫도그율마</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>해피트리</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>떡갈고무나무</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>관음죽</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">농원1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;금전수&#39;</span><span class="p">,</span> <span class="s1">&#39;스투키&#39;</span><span class="p">,</span> <span class="s1">&#39;극락조&#39;</span><span class="p">,</span> <span class="s1">&#39;만세선인장&#39;</span><span class="p">,</span> <span class="s1">&#39;뱅갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;파키라&#39;</span><span class="p">,</span> <span class="s1">&#39;몬스테라&#39;</span><span class="p">,</span> <span class="s1">&#39;율마&#39;</span><span class="p">,</span> <span class="s1">&#39;콤펙타&#39;</span><span class="p">,</span> <span class="s1">&#39;테이블야자&#39;</span><span class="p">,</span> <span class="s1">&#39;크루시아&#39;</span><span class="p">,</span> <span class="s1">&#39;스파트필름&#39;</span><span class="p">,</span> <span class="s1">&#39;녹보수&#39;</span><span class="p">,</span> <span class="s1">&#39;산세베리아&#39;</span><span class="p">,</span> <span class="s1">&#39;보석금전수&#39;</span><span class="p">,</span> <span class="s1">&#39;아레카야자&#39;</span><span class="p">,</span> <span class="s1">&#39;행운목&#39;</span><span class="p">,</span> <span class="s1">&#39;알로카시아&#39;</span><span class="p">,</span> <span class="s1">&#39;핫도그율마&#39;</span><span class="p">,</span> <span class="s1">&#39;인도고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;드라코&#39;</span><span class="p">,</span> <span class="s1">&#39;크로톤&#39;</span><span class="p">,</span> <span class="s1">&#39;관음죽&#39;</span><span class="p">,</span> <span class="s1">&#39;해피트리&#39;</span><span class="p">,</span> <span class="s1">&#39;떡갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;귀면각&#39;</span><span class="p">,</span> <span class="s1">&#39;아가베&#39;</span><span class="p">,</span> <span class="s1">&#39;뿔스투키&#39;</span><span class="p">,</span> <span class="s1">&#39;슈퍼스투키&#39;</span><span class="p">,</span> <span class="s1">&#39;소철&#39;</span><span class="p">]})</span>
+<span class="n">농원1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>극락조</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>만세선인장</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>뱅갈고무나무</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>파키라</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>몬스테라</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>콤펙타</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>테이블야자</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>크루시아</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>녹보수</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>보석금전수</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>아레카야자</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>알로카시아</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>핫도그율마</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>인도고무나무</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>크로톤</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>관음죽</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>해피트리</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>떡갈고무나무</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>귀면각</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>아가베</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>뿔스투키</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>슈퍼스투키</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>소철</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">결1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;금전수&#39;</span><span class="p">,</span> <span class="s1">&#39;스투키&#39;</span><span class="p">,</span> <span class="s1">&#39;산세베리아&#39;</span><span class="p">,</span> <span class="s1">&#39;율마&#39;</span><span class="p">,</span> <span class="s1">&#39;스파트필름&#39;</span><span class="p">,</span> <span class="s1">&#39;파키라&#39;</span><span class="p">,</span> <span class="s1">&#39;몬스테라&#39;</span><span class="p">,</span> <span class="s1">&#39;뱅갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;사파이어&#39;</span><span class="p">,</span> <span class="s1">&#39;안시리움&#39;</span><span class="p">,</span> <span class="s1">&#39;테이블야자&#39;</span><span class="p">,</span> <span class="s1">&#39;녹보수&#39;</span><span class="p">,</span> <span class="s1">&#39;유칼리툽스&#39;</span><span class="p">,</span> <span class="s1">&#39;극락조&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;올리브나무&#39;</span><span class="p">,</span> <span class="s1">&#39;스킨답서스&#39;</span><span class="p">,</span> <span class="s1">&#39;산호수&#39;</span><span class="p">,</span> <span class="s1">&#39;보석금전수&#39;</span><span class="p">,</span> <span class="s1">&#39;오렌지자스민&#39;</span><span class="p">,</span> <span class="s1">&#39;크루시아&#39;</span><span class="p">,</span> <span class="s1">&#39;인도고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;크로톤&#39;</span><span class="p">,</span> <span class="s1">&#39;마리안느&#39;</span><span class="p">,</span> <span class="s1">&#39;콤펙타&#39;</span><span class="p">,</span> <span class="s1">&#39;아레카야자&#39;</span><span class="p">,</span> <span class="s1">&#39;행운목&#39;</span><span class="p">,</span> <span class="s1">&#39;홍콩야자&#39;</span><span class="p">,</span> <span class="s1">&#39;알로카시아&#39;</span><span class="p">,</span> <span class="s1">&#39;핫도그율마&#39;</span><span class="p">,</span> <span class="s1">&#39;해피트리&#39;</span><span class="p">,</span> <span class="s1">&#39;떡갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;드라코&#39;</span><span class="p">,</span> <span class="s1">&#39;관음죽&#39;</span><span class="p">]})</span>
+<span class="n">결1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>파키라</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>몬스테라</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>뱅갈고무나무</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>사파이어</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>안시리움</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>테이블야자</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>녹보수</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>유칼리툽스</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>극락조</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>올리브나무</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>스킨답서스</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>산호수</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>보석금전수</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>오렌지자스민</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>크루시아</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>인도고무나무</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>크로톤</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>마리안느</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>콤펙타</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>아레카야자</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>홍콩야자</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>알로카시아</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>핫도그율마</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>해피트리</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>떡갈고무나무</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>관음죽</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">플로랄1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;개운죽&#39;</span><span class="p">,</span> <span class="s1">&#39;금전수&#39;</span><span class="p">,</span> <span class="s1">&#39;꽃기린&#39;</span><span class="p">,</span> <span class="s1">&#39;나한송&#39;</span><span class="p">,</span> <span class="s1">&#39;남천&#39;</span><span class="p">,</span> <span class="s1">&#39;레마탄&#39;</span><span class="p">,</span> <span class="s1">&#39;로즈마리&#39;</span><span class="p">,</span> <span class="s1">&#39;무늬사철&#39;</span><span class="p">,</span> <span class="s1">&#39;무늬산호수&#39;</span><span class="p">,</span> <span class="s1">&#39;무늬아이비&#39;</span><span class="p">,</span> <span class="s1">&#39;미니금사철&#39;</span><span class="p">,</span> <span class="s1">&#39;바나나크로톤&#39;</span><span class="p">,</span> <span class="s1">&#39;빅토리아&#39;</span><span class="p">,</span> <span class="s1">&#39;산호수&#39;</span><span class="p">,</span> 
+                     <span class="s1">&#39;슈퍼바&#39;</span><span class="p">,</span> <span class="s1">&#39;스투키&#39;</span><span class="p">,</span> <span class="s1">&#39;싱고니움&#39;</span><span class="p">,</span> <span class="s1">&#39;아몬드페페&#39;</span><span class="p">,</span> <span class="s1">&#39;아이비&#39;</span><span class="p">,</span> <span class="s1">&#39;오렌지자스민&#39;</span><span class="p">,</span> <span class="s1">&#39;천냥금&#39;</span><span class="p">,</span> <span class="s1">&#39;청페페&#39;</span><span class="p">,</span> <span class="s1">&#39;테이블야자&#39;</span><span class="p">,</span> <span class="s1">&#39;핑크스타&#39;</span><span class="p">,</span> <span class="s1">&#39;호야&#39;</span><span class="p">,</span> <span class="s1">&#39;홀리페페&#39;</span><span class="p">,</span> <span class="s1">&#39;홍콩야자&#39;</span><span class="p">,</span> <span class="s1">&#39;홍페페&#39;</span><span class="p">,</span> 
+                     <span class="s1">&#39;화이트스타&#39;</span><span class="p">,</span> <span class="s1">&#39;황금사철&#39;</span><span class="p">,</span> <span class="s1">&#39;나비란&#39;</span><span class="p">,</span> <span class="s1">&#39;멜라닌고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;몬스테라&#39;</span><span class="p">,</span> <span class="s1">&#39;무늬홍콩야자&#39;</span><span class="p">,</span> <span class="s1">&#39;떡갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;문샤인&#39;</span><span class="p">,</span> <span class="s1">&#39;뱅갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;부자란&#39;</span><span class="p">,</span> <span class="s1">&#39;블루버드&#39;</span><span class="p">,</span> <span class="s1">&#39;산데리아골드&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;산세베리아&#39;</span><span class="p">,</span> <span class="s1">&#39;스킨답서스&#39;</span><span class="p">,</span> <span class="s1">&#39;스파트필름&#39;</span><span class="p">,</span> <span class="s1">&#39;오색마삭줄&#39;</span><span class="p">,</span> <span class="s1">&#39;올리브&#39;</span><span class="p">,</span> <span class="s1">&#39;죽백나무&#39;</span><span class="p">,</span> <span class="s1">&#39;커피나무&#39;</span><span class="p">,</span> <span class="s1">&#39;콤펙타&#39;</span><span class="p">,</span> <span class="s1">&#39;콩고&#39;</span><span class="p">,</span> <span class="s1">&#39;크루샤&#39;</span><span class="p">,</span> <span class="s1">&#39;타이거산세베리아&#39;</span><span class="p">,</span> 
+                     <span class="s1">&#39;트리안&#39;</span><span class="p">,</span> <span class="s1">&#39;파키라&#39;</span><span class="p">,</span> <span class="s1">&#39;팔손이&#39;</span><span class="p">,</span> <span class="s1">&#39;푸미라&#39;</span><span class="p">,</span> <span class="s1">&#39;해피트리&#39;</span><span class="p">,</span> <span class="s1">&#39;행운목&#39;</span><span class="p">,</span> <span class="s1">&#39;허니산세베리아&#39;</span><span class="p">,</span> <span class="s1">&#39;형광스킨답서스&#39;</span><span class="p">,</span> <span class="s1">&#39;황금마삭줄&#39;</span><span class="p">]})</span>
+<span class="n">플로랄1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>개운죽</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>꽃기린</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>나한송</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>남천</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>레마탄</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>로즈마리</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>무늬사철</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>무늬산호수</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>무늬아이비</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>미니금사철</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>바나나크로톤</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>빅토리아</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>산호수</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>슈퍼바</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>싱고니움</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>아몬드페페</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>아이비</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>오렌지자스민</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>천냥금</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>청페페</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>테이블야자</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>핑크스타</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>호야</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>홀리페페</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>홍콩야자</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>홍페페</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>화이트스타</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>황금사철</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>나비란</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>멜라닌고무나무</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>몬스테라</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>무늬홍콩야자</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>떡갈고무나무</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>문샤인</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>뱅갈고무나무</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>부자란</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>블루버드</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>산데리아골드</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>스킨답서스</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>오색마삭줄</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>올리브</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>죽백나무</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>커피나무</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>콤펙타</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>콩고</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>크루샤</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>타이거산세베리아</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>트리안</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>파키라</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>팔손이</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>푸미라</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>해피트리</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>허니산세베리아</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>형광스킨답서스</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>황금마삭줄</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">푸르미1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;올리브&#39;</span><span class="p">]})</span>
+<span class="n">푸르미1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>올리브</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">드셀1</span><span class="p">,</span> <span class="n">농원1</span><span class="p">,</span> <span class="n">결1</span><span class="p">,</span> <span class="n">플로랄1</span><span class="p">,</span> <span class="n">푸르미1</span><span class="p">])</span>
+<span class="n">first</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>허니산세베리아</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>형광스킨답서스</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>황금마삭줄</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>올리브</td>
+    </tr>
+  </tbody>
+</table>
+<p>158 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>허니산세베리아</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>형광스킨답서스</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>황금마삭줄</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>올리브</td>
+    </tr>
+  </tbody>
+</table>
+<p>158 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>파키라        4
+행운목        4
+스파트필름      4
+테이블야자      4
+뱅갈고무나무     4
+          ..
+형광스킨답서스    1
+커피나무       1
+남천         1
+블루버드       1
+오색마삭줄      1
+Name: name, Length: 83, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>식물 판매처 5개 사이트의 월간 베스트 1순위 옵션 합산 결과 중,</p>
+<ul>
+<li>빈도수 1순위: 파키라, 행운목, 스파트필름, 테이블야자, 뱅갈고무나무 등</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50900;&#44036;-&#48288;&#49828;&#53944;-2&#49692;&#50948;-&#45936;&#51060;&#53552;-&#49688;&#51665;">&#50900;&#44036; &#48288;&#49828;&#53944; 2&#49692;&#50948; &#45936;&#51060;&#53552; &#49688;&#51665;<a class="anchor-link" href="#&#50900;&#44036;-&#48288;&#49828;&#53944;-2&#49692;&#50948;-&#45936;&#51060;&#53552;-&#49688;&#51665;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">농원2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;올리브나무&#39;</span><span class="p">,</span> <span class="s1">&#39;유칼립투스&#39;</span><span class="p">,</span> <span class="s1">&#39;겐차야자&#39;</span><span class="p">]})</span>
+<span class="n">농원2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>올리브나무</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>유칼립투스</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>겐차야자</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">결2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;남천&#39;</span><span class="p">]})</span>
+<span class="n">결2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>남천</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">플로랄2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;라벤더&#39;</span><span class="p">,</span> <span class="s1">&#39;율마&#39;</span><span class="p">,</span> <span class="s1">&#39;홍콩페페&#39;</span><span class="p">]})</span>
+<span class="n">플로랄2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>라벤더</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>홍콩페페</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">푸르미2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;만세선인장&#39;</span><span class="p">,</span> <span class="s1">&#39;스투키&#39;</span><span class="p">,</span> <span class="s1">&#39;용심목&#39;</span><span class="p">,</span> <span class="s1">&#39;괴마옥&#39;</span><span class="p">,</span> <span class="s1">&#39;금전수&#39;</span><span class="p">,</span> <span class="s1">&#39;금호&#39;</span><span class="p">,</span> <span class="s1">&#39;꽃기린&#39;</span><span class="p">,</span> <span class="s1">&#39;눈꽃&#39;</span><span class="p">,</span> <span class="s1">&#39;미니알로에&#39;</span><span class="p">,</span> <span class="s1">&#39;산세베리아&#39;</span><span class="p">,</span> <span class="s1">&#39;소정&#39;</span><span class="p">,</span> <span class="s1">&#39;연필&#39;</span><span class="p">,</span> <span class="s1">&#39;피쉬본&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;수퍼스투키&#39;</span><span class="p">,</span> <span class="s1">&#39;무륜주&#39;</span><span class="p">,</span> <span class="s1">&#39;금황환&#39;</span><span class="p">,</span> <span class="s1">&#39;환락&#39;</span><span class="p">,</span> <span class="s1">&#39;청하각&#39;</span><span class="p">,</span> <span class="s1">&#39;춘봉철화&#39;</span><span class="p">,</span> <span class="s1">&#39;모듬선인장&#39;</span><span class="p">,</span> <span class="s1">&#39;염좌&#39;</span><span class="p">,</span> <span class="s1">&#39;귀면각&#39;</span><span class="p">,</span> <span class="s1">&#39;화이트고스트&#39;</span><span class="p">,</span> <span class="s1">&#39;왕꽃기린&#39;</span><span class="p">,</span> <span class="s1">&#39;밍크&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;암석주&#39;</span><span class="p">,</span> <span class="s1">&#39;인테리어스투키&#39;</span><span class="p">]})</span>
+<span class="n">푸르미2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>만세선인장</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>용심목</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>괴마옥</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>금호</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>꽃기린</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>눈꽃</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>미니알로에</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>소정</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>연필</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>피쉬본</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>수퍼스투키</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>무륜주</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>금황환</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>환락</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>청하각</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>춘봉철화</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>모듬선인장</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>염좌</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>귀면각</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>화이트고스트</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>왕꽃기린</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>밍크</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>암석주</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>인테리어스투키</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">second</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">농원2</span><span class="p">,</span> <span class="n">결2</span><span class="p">,</span> <span class="n">플로랄2</span><span class="p">,</span> <span class="n">푸르미2</span><span class="p">])</span>
+<span class="n">second</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>올리브나무</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>유칼립투스</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>겐차야자</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>남천</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>라벤더</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>홍콩페페</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>만세선인장</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>용심목</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>괴마옥</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>금호</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>꽃기린</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>눈꽃</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>미니알로에</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>소정</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>연필</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>피쉬본</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>수퍼스투키</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>무륜주</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>금황환</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>환락</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>청하각</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>춘봉철화</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>모듬선인장</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>염좌</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>귀면각</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>화이트고스트</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>왕꽃기린</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>밍크</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>암석주</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>인테리어스투키</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">second</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>올리브나무</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>유칼립투스</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>겐차야자</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>남천</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>라벤더</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>홍콩페페</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>만세선인장</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>용심목</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>괴마옥</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>금호</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>꽃기린</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>눈꽃</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>미니알로에</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>소정</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>연필</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>피쉬본</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>수퍼스투키</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>무륜주</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>금황환</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>환락</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>청하각</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>춘봉철화</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>모듬선인장</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>염좌</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>귀면각</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>화이트고스트</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>왕꽃기린</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>밍크</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>암석주</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>인테리어스투키</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>용심목        1
+유칼립투스      1
+미니알로에      1
+청하각        1
+금황환        1
+금전수        1
+올리브나무      1
+금호         1
+밍크         1
+염좌         1
+왕꽃기린       1
+만세선인장      1
+눈꽃         1
+무륜주        1
+인테리어스투키    1
+암석주        1
+홍콩페페       1
+율마         1
+겐차야자       1
+소정         1
+라벤더        1
+춘봉철화       1
+연필         1
+화이트고스트     1
+괴마옥        1
+수퍼스투키      1
+꽃기린        1
+환락         1
+산세베리아      1
+스투키        1
+피쉬본        1
+모듬선인장      1
+남천         1
+귀면각        1
+Name: name, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>식물 판매처 5개 사이트의 월간 베스트 2순위 옵션 합산 결과 중,</p>
+<ul>
+<li>빈도수가 모두 동일하므로 데이터 수집 불가능</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50900;&#44036;-&#48288;&#49828;&#53944;-3&#49692;&#50948;-&#45936;&#51060;&#53552;-&#49688;&#51665;">&#50900;&#44036; &#48288;&#49828;&#53944; 3&#49692;&#50948; &#45936;&#51060;&#53552; &#49688;&#51665;<a class="anchor-link" href="#&#50900;&#44036;-&#48288;&#49828;&#53944;-3&#49692;&#50948;-&#45936;&#51060;&#53552;-&#49688;&#51665;"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">드셀3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;인삼팬다분재&#39;</span><span class="p">,</span><span class="s1">&#39;아가베&#39;</span><span class="p">,</span> <span class="s1">&#39;가지마루&#39;</span><span class="p">,</span> <span class="s1">&#39;팬다분재&#39;</span><span class="p">,</span> <span class="s1">&#39;황금죽&#39;</span><span class="p">,</span> <span class="s1">&#39;떡갈나무&#39;</span><span class="p">,</span> <span class="s1">&#39;철골소심&#39;</span><span class="p">,</span> <span class="s1">&#39;산천보세&#39;</span><span class="p">,</span> <span class="s1">&#39;금침난&#39;</span><span class="p">,</span> 
+                            <span class="s1">&#39;대국&#39;</span><span class="p">,</span> <span class="s1">&#39;옥화&#39;</span><span class="p">,</span> <span class="s1">&#39;황룡관&#39;</span><span class="p">,</span> <span class="s1">&#39;호접란&#39;</span><span class="p">,</span> <span class="s1">&#39;만천홍&#39;</span><span class="p">,</span> <span class="s1">&#39;심비디움&#39;</span><span class="p">,</span> <span class="s1">&#39;덴파레&#39;</span><span class="p">]})</span>
+<span class="n">드셀3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>인삼팬다분재</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>아가베</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>가지마루</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>팬다분재</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>황금죽</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>떡갈나무</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>철골소심</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>산천보세</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>금침난</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>대국</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>옥화</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>황룡관</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>호접란</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>만천홍</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>심비디움</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>덴파레</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">농원3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;마오리코로키아&#39;</span><span class="p">]})</span>
+<span class="n">농원3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>마오리코로키아</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">결3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;인삼팬다분재&#39;</span><span class="p">,</span> <span class="s1">&#39;아가베&#39;</span><span class="p">,</span> <span class="s1">&#39;떡갈나무&#39;</span><span class="p">,</span> <span class="s1">&#39;가지마루&#39;</span><span class="p">,</span> <span class="s1">&#39;팬다분재&#39;</span><span class="p">,</span> <span class="s1">&#39;황금죽&#39;</span><span class="p">,</span> <span class="s1">&#39;킹벤자민&#39;</span><span class="p">,</span> <span class="s1">&#39;철골소심&#39;</span><span class="p">,</span> <span class="s1">&#39;산천보세&#39;</span><span class="p">,</span> <span class="s1">&#39;금침난&#39;</span><span class="p">,</span> 
+                           <span class="s1">&#39;대국&#39;</span><span class="p">,</span> <span class="s1">&#39;옥화&#39;</span><span class="p">,</span> <span class="s1">&#39;황룡관&#39;</span><span class="p">,</span> <span class="s1">&#39;호접란&#39;</span><span class="p">,</span> <span class="s1">&#39;만천홍&#39;</span><span class="p">,</span> <span class="s1">&#39;심비디움&#39;</span><span class="p">,</span> <span class="s1">&#39;덴파레&#39;</span><span class="p">]})</span>
+<span class="n">결3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>인삼팬다분재</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>아가베</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>떡갈나무</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>가지마루</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>팬다분재</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>황금죽</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>킹벤자민</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>철골소심</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>산천보세</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>금침난</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>대국</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>옥화</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>황룡관</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>호접란</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>만천홍</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>심비디움</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>덴파레</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">푸르미3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:[</span><span class="s1">&#39;극락조&#39;</span><span class="p">,</span> <span class="s1">&#39;만냥금&#39;</span><span class="p">,</span> <span class="s1">&#39;몬스테라&#39;</span><span class="p">,</span> <span class="s1">&#39;뱅갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;스파트필름&#39;</span><span class="p">,</span> <span class="s1">&#39;아레카야자&#39;</span><span class="p">,</span> <span class="s1">&#39;알로카시아&#39;</span><span class="p">,</span> <span class="s1">&#39;유칼립투스&#39;</span><span class="p">,</span> <span class="s1">&#39;테이블야자&#39;</span><span class="p">,</span> <span class="s1">&#39;파키라&#39;</span><span class="p">,</span> <span class="s1">&#39;해피트리&#39;</span><span class="p">,</span> <span class="s1">&#39;녹보수&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;마리안느&#39;</span><span class="p">,</span> <span class="s1">&#39;안시리움&#39;</span><span class="p">,</span> <span class="s1">&#39;애플콩고&#39;</span><span class="p">,</span> <span class="s1">&#39;인도고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;크루시아&#39;</span><span class="p">,</span> <span class="s1">&#39;율마&#39;</span><span class="p">,</span> <span class="s1">&#39;떡갈고무나무&#39;</span><span class="p">,</span> <span class="s1">&#39;사파이어&#39;</span><span class="p">,</span> <span class="s1">&#39;오로라&#39;</span><span class="p">,</span> <span class="s1">&#39;산호수&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;엔젤사파이어&#39;</span><span class="p">,</span> <span class="s1">&#39;황금죽&#39;</span><span class="p">,</span> <span class="s1">&#39;팔손이&#39;</span><span class="p">,</span> <span class="s1">&#39;문샤인&#39;</span><span class="p">,</span> <span class="s1">&#39;아비스&#39;</span><span class="p">,</span> <span class="s1">&#39;콤펙타&#39;</span><span class="p">,</span> <span class="s1">&#39;맛상&#39;</span><span class="p">,</span> <span class="s1">&#39;드라코&#39;</span><span class="p">,</span> <span class="s1">&#39;그린콩고&#39;</span><span class="p">,</span> <span class="s1">&#39;셀렘&#39;</span><span class="p">,</span> <span class="s1">&#39;스노우사파이어&#39;</span><span class="p">,</span> <span class="s1">&#39;천냥금&#39;</span><span class="p">]})</span>
+<span class="n">푸르미3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>극락조</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>만냥금</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>몬스테라</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>뱅갈고무나무</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>아레카야자</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>알로카시아</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>유칼립투스</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>테이블야자</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>파키라</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>해피트리</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>녹보수</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>마리안느</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>안시리움</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>애플콩고</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>인도고무나무</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>크루시아</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>떡갈고무나무</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>사파이어</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>오로라</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>산호수</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>엔젤사파이어</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>황금죽</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>팔손이</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>문샤인</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>아비스</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>콤펙타</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>맛상</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>그린콩고</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>셀렘</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>스노우사파이어</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>천냥금</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">third</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">드셀3</span><span class="p">,</span> <span class="n">농원3</span><span class="p">,</span> <span class="n">결3</span><span class="p">,</span> <span class="n">푸르미3</span><span class="p">])</span>
+<span class="n">third</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>인삼팬다분재</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>아가베</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>가지마루</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>팬다분재</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>황금죽</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>그린콩고</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>셀렘</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>스노우사파이어</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>천냥금</td>
+    </tr>
+  </tbody>
+</table>
+<p>68 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">third</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>인삼팬다분재</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>아가베</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>가지마루</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>팬다분재</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>황금죽</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>그린콩고</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>셀렘</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>스노우사파이어</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>천냥금</td>
+    </tr>
+  </tbody>
+</table>
+<p>68 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>황금죽        3
+심비디움       2
+호접란        2
+금침난        2
+인삼팬다분재     2
+떡갈나무       2
+아가베        2
+팬다분재       2
+가지마루       2
+산천보세       2
+황룡관        2
+대국         2
+철골소심       2
+옥화         2
+덴파레        2
+만천홍        2
+사파이어       1
+문샤인        1
+떡갈고무나무     1
+알로카시아      1
+산호수        1
+뱅갈고무나무     1
+몬스테라       1
+율마         1
+셀렘         1
+스파트필름      1
+파키라        1
+애플콩고       1
+스노우사파이어    1
+마오리코로키아    1
+테이블야자      1
+안시리움       1
+엔젤사파이어     1
+아비스        1
+그린콩고       1
+팔손이        1
+극락조        1
+인도고무나무     1
+아레카야자      1
+녹보수        1
+킹벤자민       1
+마리안느       1
+유칼립투스      1
+맛상         1
+콤펙타        1
+드라코        1
+크루시아       1
+오로라        1
+만냥금        1
+천냥금        1
+해피트리       1
+Name: name, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>식물 판매처 5개 사이트의 월간 베스트 3순위 옵션 합산 결과 중,</p>
+<ul>
+<li>빈도수 1순위: 황금죽</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#54032;&#47588;&#52376;-&#44033;&#44033;&#51032;-1,2,3&#49692;&#50948;&#50640;&#49436;-&#51473;&#48373;&#46104;&#45716;-&#49885;&#47932;&#51060;-&#51080;&#45716;&#51648;-&#54869;&#51064;&#54616;&#44592;-&#50948;&#54620;-&#53076;&#46300;-&#49892;&#54665;">&#54032;&#47588;&#52376; &#44033;&#44033;&#51032; 1,2,3&#49692;&#50948;&#50640;&#49436; &#51473;&#48373;&#46104;&#45716; &#49885;&#47932;&#51060; &#51080;&#45716;&#51648; &#54869;&#51064;&#54616;&#44592; &#50948;&#54620; &#53076;&#46300; &#49892;&#54665;<a class="anchor-link" href="#&#54032;&#47588;&#52376;-&#44033;&#44033;&#51032;-1,2,3&#49692;&#50948;&#50640;&#49436;-&#51473;&#48373;&#46104;&#45716;-&#49885;&#47932;&#51060;-&#51080;&#45716;&#51648;-&#54869;&#51064;&#54616;&#44592;-&#50948;&#54620;-&#53076;&#46300;-&#49892;&#54665;"> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fir</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">드셀1</span><span class="p">,</span><span class="n">드셀3</span><span class="p">])</span>
+<span class="n">fir</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>파키라</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>몬스테라</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>뱅갈고무나무</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>사파이어</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>안시리움</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>테이블야자</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>녹보수</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>유칼리툽스</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>극락조</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>올리브나무</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>스킨답서스</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>산호수</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>보석금전수</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>오렌지자스민</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>크루시아</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>인도고무나무</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>크로톤</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>마리안느</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>콤펙타</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>아레카야자</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>홍콩야자</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>알로카시아</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>만세선인장</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>핫도그율마</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>해피트리</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>떡갈고무나무</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>관음죽</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>인삼팬다분재</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>아가베</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>가지마루</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>팬다분재</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>황금죽</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>떡갈나무</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>철골소심</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>산천보세</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>금침난</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>대국</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>옥화</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>황룡관</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>호접란</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>만천홍</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>심비디움</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>덴파레</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fir</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>심비디움      1
+황금죽       1
+대국        1
+관음죽       1
+산천보세      1
+홍콩야자      1
+가지마루      1
+스파트필름     1
+산세베리아     1
+스킨답서스     1
+팬다분재      1
+뱅갈고무나무    1
+핫도그율마     1
+크루시아      1
+아가베       1
+행운목       1
+율마        1
+녹보수       1
+보석금전수     1
+콤펙타       1
+오렌지자스민    1
+인삼팬다분재    1
+황룡관       1
+금침난       1
+떡갈고무나무    1
+만세선인장     1
+떡갈나무      1
+크로톤       1
+파키라       1
+만천홍       1
+스투키       1
+알로카시아     1
+몬스테라      1
+산호수       1
+옥화        1
+덴파레       1
+드라코       1
+마리안느      1
+극락조       1
+안시리움      1
+사파이어      1
+호접란       1
+인도고무나무    1
+아레카야자     1
+금전수       1
+테이블야자     1
+유칼리툽스     1
+올리브나무     1
+해피트리      1
+철골소심      1
+Name: name, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">농원1</span><span class="p">,</span> <span class="n">농원2</span><span class="p">,</span> <span class="n">농원3</span><span class="p">])</span>
+<span class="n">sec</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>극락조</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>만세선인장</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>뱅갈고무나무</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>파키라</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>몬스테라</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>콤펙타</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>테이블야자</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>크루시아</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>녹보수</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>보석금전수</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>아레카야자</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>알로카시아</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>핫도그율마</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>인도고무나무</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>크로톤</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>관음죽</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>해피트리</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>떡갈고무나무</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>귀면각</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>아가베</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>뿔스투키</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>슈퍼스투키</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>소철</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>올리브나무</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>유칼립투스</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>겐차야자</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>마오리코로키아</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sec</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>크루시아       1
+보석금전수      1
+귀면각        1
+율마         1
+인도고무나무     1
+아레카야자      1
+금전수        1
+산세베리아      1
+슈퍼스투키      1
+파키라        1
+크로톤        1
+유칼립투스      1
+만세선인장      1
+마오리코로키아    1
+해피트리       1
+테이블야자      1
+소철         1
+행운목        1
+극락조        1
+아가베        1
+올리브나무      1
+드라코        1
+핫도그율마      1
+콤펙타        1
+뱅갈고무나무     1
+몬스테라       1
+알로카시아      1
+떡갈고무나무     1
+스투키        1
+겐차야자       1
+뿔스투키       1
+녹보수        1
+스파트필름      1
+관음죽        1
+Name: name, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">결1</span><span class="p">,</span> <span class="n">결2</span><span class="p">,</span> <span class="n">결3</span><span class="p">])</span>
+<span class="n">thi</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>산세베리아</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>스파트필름</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>파키라</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>몬스테라</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>뱅갈고무나무</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>사파이어</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>안시리움</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>테이블야자</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>녹보수</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>유칼리툽스</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>극락조</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>올리브나무</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>스킨답서스</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>산호수</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>보석금전수</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>오렌지자스민</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>크루시아</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>인도고무나무</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>크로톤</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>마리안느</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>콤펙타</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>아레카야자</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>행운목</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>홍콩야자</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>알로카시아</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>핫도그율마</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>해피트리</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>떡갈고무나무</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>관음죽</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>남천</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>인삼팬다분재</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>아가베</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>떡갈나무</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>가지마루</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>팬다분재</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>황금죽</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>킹벤자민</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>철골소심</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>산천보세</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>금침난</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>대국</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>옥화</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>황룡관</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>호접란</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>만천홍</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>심비디움</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>덴파레</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">thi</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>심비디움      1
+핫도그율마     1
+산천보세      1
+홍콩야자      1
+가지마루      1
+스파트필름     1
+남천        1
+산세베리아     1
+스킨답서스     1
+팬다분재      1
+뱅갈고무나무    1
+황금죽       1
+아가베       1
+대국        1
+테이블야자     1
+행운목       1
+율마        1
+녹보수       1
+보석금전수     1
+콤펙타       1
+오렌지자스민    1
+인삼팬다분재    1
+황룡관       1
+금침난       1
+관음죽       1
+떡갈고무나무    1
+크루시아      1
+극락조       1
+파키라       1
+만천홍       1
+스투키       1
+알로카시아     1
+몬스테라      1
+산호수       1
+옥화        1
+덴파레       1
+드라코       1
+마리안느      1
+안시리움      1
+떡갈나무      1
+사파이어      1
+호접란       1
+인도고무나무    1
+아레카야자     1
+금전수       1
+킹벤자민      1
+유칼리툽스     1
+올리브나무     1
+해피트리      1
+크로톤       1
+철골소심      1
+Name: name, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fou</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">플로랄1</span><span class="p">,</span> <span class="n">플로랄2</span><span class="p">])</span>
+<span class="n">fou</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>개운죽</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>금전수</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>꽃기린</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>나한송</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>남천</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>형광스킨답서스</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>황금마삭줄</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>라벤더</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>율마</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>홍콩페페</td>
+    </tr>
+  </tbody>
+</table>
+<p>63 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fou</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>싱고니움     1
+미니금사철    1
+무늬아이비    1
+홍콩야자     1
+슈퍼바      1
+        ..
+아몬드페페    1
+천냥금      1
+무늬산호수    1
+해피트리     1
+황금마삭줄    1
+Name: name, Length: 63, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">푸르미1</span><span class="p">,</span> <span class="n">푸르미2</span><span class="p">,</span> <span class="n">푸르미3</span><span class="p">])</span>
+<span class="n">fif</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>올리브</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>만세선인장</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>스투키</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>용심목</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>괴마옥</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>드라코</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>그린콩고</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>셀렘</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>스노우사파이어</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>천냥금</td>
+    </tr>
+  </tbody>
+</table>
+<p>62 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fif</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>크루시아     1
+소정       1
+스파트필름    1
+금호       1
+모듬선인장    1
+        ..
+청하각      1
+해피트리     1
+무륜주      1
+만냥금      1
+오로라      1
+Name: name, Length: 62, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#45936;&#51060;&#53552;-&#49688;&#51665;-&#44208;&#44284;">&#45936;&#51060;&#53552; &#49688;&#51665; &#44208;&#44284;<a class="anchor-link" href="#&#45936;&#51060;&#53552;-&#49688;&#51665;-&#44208;&#44284;"> </a></h3><ul>
+<li>파키라, 행운목, 스파트필름, 테이블야자, 뱅갈고무나무, 황금죽 &gt; 식물 판매 순위 상위권에 속하는 것을 알 수 있음.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/blue/2022/07/07/%EC%9D%B8%EA%B8%B0%EC%8B%9D%EB%AC%BC%EC%88%9C%EC%9C%84.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blue/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blue/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blue/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/suuiq" target="_blank" title="suuiq"><svg class="svg-icon grey"><use xlink:href="/blue/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
